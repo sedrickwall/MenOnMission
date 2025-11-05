@@ -1,0 +1,66 @@
+Purpose: Build a sleek, modern digital home for Men on Mission — a faith-driven brotherhood focused on mentorship, service, and community impact in Dallas and Minneapolis, with scalable potential for expansion.
+1. Core Objectives
+Inspire visitors to join the movement and sign up for upcoming events.
+Collect contact information and interest areas via embedded forms (Jotform/Google Form).
+Present the mission, leadership, and service focus clearly and credibly.
+Require minimal ongoing maintenance (no CMS or manual updates needed initially).
+2. Design & Brand Direction
+Tone: Luxury | Exclusivity | Modern Brotherhood | Minimalist
+Style Reference: A mix of Apple.com elegance + church brand site warmth.
+Color Palette: Deep navy (#0A1A2F), gold (#C8A45D), white (#FFFFFF), slate gray (#444).
+Font Style: Sans-serif (e.g., Poppins / Inter) with clear hierarchy.
+Layout: Full-screen hero image, section-based scroll, smooth fade transitions.
+3. Site Structure & Page Requirements
+🔹 1. Landing Page (Home)
+Hero section:
+Background image or short video (men in action — serving, praying, walking with purpose).
+Tagline: “Faith. Service. Brotherhood.”
+CTA: Join the Mission → scrolls to sign-up form.
+Section 1 – About the Movement
+Short statement: “Men on Mission is a brotherhood of Kingdom-minded men serving through mentorship, outreach, and community action in Dallas & Minneapolis.”
+Button: “Our Vision” → About Page.
+Section 2 – Core Pillars (3 Cards):
+Mentorship – Building up men through shared wisdom.
+Outreach – Serving the homeless and veterans.
+Brotherhood – Walking together in faith and purpose.
+Section 3 – Upcoming Mission Event
+Static description (e.g., “Next Men’s Service Day – Saturday 9:00 AM – Dallas / Minneapolis”).
+RSVP Button → Embedded Google/Jotform RSVP.
+Section 4 – Scripture of the Month
+Example: “As iron sharpens iron, so one man sharpens another.” – Proverbs 27:17
+Subtext: “Our mission starts with the Word.”
+Section 5 – Join the Mission
+Embedded Jotform for:
+Name
+Email
+City (Dallas or Minneapolis)
+Area(s) of Interest: Mentorship, Homeless Outreach, Veterans, Family Days
+Willing to join launch team (Yes/No toggle)
+Confirmation message: “Welcome to the Mission. You’ll receive updates on upcoming service events.”
+🔹 2. About Page
+Story of the movement (founded by faith-driven men across two cities).
+Vision: expand to new cities and grow into a registered non-profit.
+Mission Statement:
+“To empower men to serve with purpose, live with faith, and lead with integrity.”
+Short section: “Why Men on Mission?” – data points from survey:
+64% prioritized mentorship
+80% Dallas-based
+Preferred Saturdays 9–11 AM
+Optional: photo strip or muted background of real members in service.
+🔹 3. Events Page (Hybrid RSVP + Interest)
+Section 1 – “Serve With Us” intro
+“Our next Men on Mission event happens the first Saturday of each month. Sign up below to serve in your city.”
+Embedded Jotform or Google Form (RSVP style).
+Optional static cards for categories:
+Homeless Outreach
+Mentorship Days
+Family Service Days (Quarterly)
+Call-to-action: “Want to host or lead an event? Join our launch team.”
+🔹 4. Contact Page
+Short contact form (Name, Email, Message → Google Form)
+Email link: connect@menonmission.org (placeholder)
+Social links (Instagram, LinkedIn, YouTube for future phase).
+Footer:
+Logo or wordmark
+“Men on Mission © 2025 | Faith. Service. Brotherhood.”
+Privacy + Terms (simple placeholder text)
