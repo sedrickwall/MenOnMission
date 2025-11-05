@@ -14,9 +14,9 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 210 6% 98%;
+  --background: 0 0% 100%;
 
-  --foreground: 210 8% 12%;
+  --foreground: 210 100% 5%;
 
   --border: 210 8% 88%;
 
@@ -48,9 +48,9 @@
 
   --popover-border: 210 7% 84%;
 
-  --primary: 38 45% 48%;
+  --primary: 38 45% 58%;
 
-  --primary-foreground: 38 45% 98%;
+  --primary-foreground: 210 100% 5%;
 
   --secondary: 210 8% 88%;
 
@@ -76,7 +76,8 @@
   --chart-4: 25 60% 45%;
   --chart-5: 280 45% 42%;
 
-  --font-sans: Poppins, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: Poppins, Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
@@ -132,9 +133,9 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 210 6% 8%;
+  --background: 210 100% 5%;
 
-  --foreground: 210 5% 92%;
+  --foreground: 0 0% 100%;
 
   --border: 210 6% 18%;
 
@@ -166,9 +167,9 @@
 
   --popover-border: 210 6% 18%;
 
-  --primary: 38 45% 42%;
+  --primary: 38 45% 58%;
 
-  --primary-foreground: 38 45% 98%;
+  --primary-foreground: 210 100% 5%;
 
   --secondary: 210 8% 18%;
 
