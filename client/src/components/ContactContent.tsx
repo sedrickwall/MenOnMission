@@ -45,18 +45,18 @@ export default function ContactContent() {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Mail className="text-primary" size={24} />
                 </div>
-                <div>
-                  <h4 className="font-heading font-semibold text-lg text-foreground mb-2">
+                <div className="flex-1">
+                  <h4 className="font-heading font-semibold text-lg text-foreground mb-3">
                     Email Us
                   </h4>
                   <a
                     href="mailto:connect@menonmission.org"
-                    className="text-primary hover:underline font-sans"
+                    className="text-primary hover:underline font-sans block mb-3"
                     data-testid="link-contact-email"
                   >
                     connect@menonmission.org
                   </a>
-                  <p className="text-muted-foreground font-sans text-sm mt-2">
+                  <p className="text-muted-foreground font-sans text-sm">
                     We typically respond within 24-48 hours
                   </p>
                 </div>
