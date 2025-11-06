@@ -5,9 +5,9 @@ import { Users, Heart, Home } from "lucide-react";
 const eventCategories = [
   {
     icon: Heart,
-    title: "Homeless Outreach",
+    title: "Homeless & Displaced Outreach",
     description:
-      "Serve meals, provide care packages, and share hope with our homeless neighbors",
+      "Serve meals, provide care packages, and share hope with our homeless or displaced neighbors",
     frequency: "2nd Saturday monthly",
     testId: "homeless",
   },
@@ -16,7 +16,7 @@ const eventCategories = [
     title: "Mentorship Days",
     description:
       "One-on-one and group mentorship focused on spiritual growth and life skills",
-    frequency: "Every Saturday",
+    frequency: "Every event",
     testId: "mentorship",
   },
   {
