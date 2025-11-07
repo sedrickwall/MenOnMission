@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useJoinMissionModal } from "@/components/JoinMissionModal";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
+  const { openModal } = useJoinMissionModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,12 +71,7 @@ export default function Navigation() {
               variant="default"
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               data-testid="button-join-mission"
-              onClick={() => {
-                const joinSection = document.getElementById("join-mission");
-                if (joinSection) {
-                  joinSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+              onClick={openModal}
             >
               Join the Mission
             </Button>
@@ -115,6 +112,10 @@ export default function Navigation() {
               variant="default"
               className="w-full bg-primary text-primary-foreground"
               data-testid="button-mobile-join"
+              onClick={() => {
+                openModal();
+                setIsMobileMenuOpen(false);
+              }}
             >
               Join the Mission
             </Button>

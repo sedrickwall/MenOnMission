@@ -2,8 +2,10 @@ import { Card } from "@/components/ui/card";
 import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
 import JotformEmbed from "@/components/JotformEmbed";
 import FormModal from "@/components/FormModal";
+import { useJoinMissionModal } from "@/components/JoinMissionModal";
 
 export default function ContactContent() {
+  const { openModal } = useJoinMissionModal();
   return (
     <section className="py-24 bg-white" data-testid="section-contact-content">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -106,6 +108,7 @@ export default function ContactContent() {
               <button
                 className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg font-heading font-semibold transition-colors"
                 data-testid="button-contact-join"
+                onClick={openModal}
               >
                 Join the Mission
               </button>

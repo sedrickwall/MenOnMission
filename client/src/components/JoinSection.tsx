@@ -1,7 +1,8 @@
-import JotformEmbed from "@/components/JotformEmbed";
-import FormModal from "@/components/FormModal";
+import { useJoinMissionModal } from "@/components/JoinMissionModal";
+import { Button } from "@/components/ui/button";
 
 export default function JoinSection() {
+  const { openModal } = useJoinMissionModal();
   return (
     <section
       id="join-mission"
@@ -35,14 +36,14 @@ export default function JoinSection() {
             opportunities to serve
           </p>
           
-          <FormModal
-            triggerText="Join the Mission"
-            title="Join the Mission"
-            description="Fill out the form below to become part of our brotherhood"
-            testId="button-join-modal"
+          <Button
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-heading font-semibold"
+            data-testid="button-join-modal"
+            onClick={openModal}
           >
-            <JotformEmbed formId="253098998962077" />
-          </FormModal>
+            Join the Mission
+          </Button>
         </div>
       </div>
     </section>
