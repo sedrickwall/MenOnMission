@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
 import JotformEmbed from "@/components/JotformEmbed";
+import FormModal from "@/components/FormModal";
 
 export default function ContactContent() {
   return (
@@ -21,17 +22,27 @@ export default function ContactContent() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <Card className="p-8 md:p-12 h-full">
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-6">
-                Send Us a Message
-              </h3>
-
-              <JotformEmbed formId="253099088281062" />
-            </Card>
-          </div>
-
           <div className="space-y-8">
+            <Card className="p-8">
+              <h4 className="font-heading font-semibold text-xl text-foreground mb-6">
+                Send Us a Message
+              </h4>
+              <p className="text-muted-foreground font-sans mb-6">
+                Have questions or want to learn more? Fill out our contact form and we'll get back to you within 24-48 hours.
+              </p>
+              <FormModal
+                triggerText="Open Contact Form"
+                title="Send Us a Message"
+                description="We'd love to hear from you"
+                triggerVariant="default"
+                triggerSize="default"
+                triggerClassName="w-full"
+                testId="button-contact-modal"
+              >
+                <JotformEmbed formId="253099088281062" />
+              </FormModal>
+            </Card>
+
             <Card className="p-8">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -39,7 +50,7 @@ export default function ContactContent() {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-heading font-semibold text-lg text-foreground mb-3">
-                    Email Us
+                    Email Us Directly
                   </h4>
                   <a
                     href="mailto:connect@menonmission.org"

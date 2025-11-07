@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Heart, Home } from "lucide-react";
+import FormModal from "@/components/FormModal";
 
 const eventCategories = [
   {
@@ -73,31 +74,36 @@ export default function EventsContent() {
           })}
         </div>
 
-        <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-lg p-8 md:p-12">
-          <h3 className="font-heading font-semibold text-2xl text-foreground mb-6 text-center">
-            RSVP for Upcoming Events
+        <div className="max-w-2xl mx-auto bg-[hsl(210,100%,5%)] rounded-2xl p-12 text-center">
+          <h3 className="font-heading font-semibold text-2xl md:text-3xl text-white mb-4">
+            Join Us at Our Next Event
           </h3>
+          <p className="text-white/80 font-sans text-lg mb-8">
+            RSVP now and be part of something greater
+          </p>
 
-          <div className="w-full mb-8">
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
-              width="100%" 
-              height="1200"
-              className="border-0 rounded-lg"
-              data-testid="iframe-event-rsvp"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <FormModal
+              triggerText="RSVP for Event"
+              title="RSVP for Upcoming Events"
+              description="Select your preferred event and location"
+              testId="button-rsvp-modal"
             >
-              Loading…
-            </iframe>
-          </div>
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
+                width="100%" 
+                height="1200"
+                className="border-0 rounded-lg"
+                data-testid="iframe-event-rsvp"
+              >
+                Loading…
+              </iframe>
+            </FormModal>
 
-          <div className="text-center border-t pt-8">
-            <p className="text-foreground font-sans font-medium mb-4">
-              Want to host or lead an event?
-            </p>
             <Button
               variant="outline"
               size="lg"
-              className="font-heading font-semibold"
+              className="font-heading font-semibold bg-white/10 text-white border-white/20 hover:bg-white hover:text-foreground"
               data-testid="button-join-launch-team"
             >
               Join Our Launch Team
