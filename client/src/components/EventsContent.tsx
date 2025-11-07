@@ -73,20 +73,21 @@ export default function EventsContent() {
           })}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-card rounded-2xl shadow-lg p-8 md:p-12">
+        <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-lg p-8 md:p-12">
           <h3 className="font-heading font-semibold text-2xl text-foreground mb-6 text-center">
             RSVP for Upcoming Events
           </h3>
 
-          <div className="aspect-[16/9] w-full bg-muted rounded-lg flex items-center justify-center mb-8">
-            <div className="text-center px-6">
-              <p className="text-muted-foreground font-sans text-sm mb-4">
-                Embedded Jotform / Google Form (RSVP)
-              </p>
-              <p className="text-foreground font-sans text-base max-w-md">
-                Select event type, preferred date, and location
-              </p>
-            </div>
+          <div className="w-full mb-8">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
+              width="100%" 
+              height="1200"
+              className="border-0 rounded-lg"
+              data-testid="iframe-event-rsvp"
+            >
+              Loading…
+            </iframe>
           </div>
 
           <div className="text-center border-t pt-8">

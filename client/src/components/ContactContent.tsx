@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import JotformEmbed from "@/components/JotformEmbed";
 
 export default function ContactContent() {
   return (
@@ -26,16 +27,7 @@ export default function ContactContent() {
                 Send Us a Message
               </h3>
 
-              <div className="aspect-[4/3] w-full bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-muted-foreground font-sans text-sm mb-4">
-                    Embedded Google Form
-                  </p>
-                  <p className="text-foreground font-sans text-base">
-                    Name, Email, Message fields
-                  </p>
-                </div>
-              </div>
+              <JotformEmbed formId="253099088281062" />
             </Card>
           </div>
 

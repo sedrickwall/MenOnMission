@@ -1,3 +1,5 @@
+import JotformEmbed from "@/components/JotformEmbed";
+
 export default function JoinSection() {
   return (
     <section
@@ -27,17 +29,7 @@ export default function JoinSection() {
           className="bg-card rounded-2xl shadow-lg p-8 md:p-12"
           data-testid="container-join-form"
         >
-          <div className="aspect-[16/9] w-full bg-muted rounded-lg flex items-center justify-center">
-            <div className="text-center px-6">
-              <p className="text-muted-foreground font-sans text-sm mb-4">
-                Embedded Jotform / Google Form
-              </p>
-              <p className="text-foreground font-sans text-base max-w-md">
-                Form will collect: Name, Email, City (Dallas/Minneapolis),
-                Areas of Interest, Launch Team Interest
-              </p>
-            </div>
-          </div>
+          <JotformEmbed formId="253098998962077" />
 
           <div className="mt-8 text-center">
             <p className="text-muted-foreground font-sans text-sm">
