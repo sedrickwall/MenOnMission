@@ -25,7 +25,7 @@ export default function EventSection() {
         <Card className="max-w-3xl mx-auto p-8 md:p-12">
           <div className="space-y-6">
             <h3 className="font-heading font-semibold text-2xl text-foreground">
-              Men's Service Day
+              Operation Turkey Dallas 2025
             </h3>
 
             <div className="space-y-4">
@@ -35,13 +35,13 @@ export default function EventSection() {
                 </div>
                 <div>
                   <div className="font-sans font-medium text-foreground">
-                    First Saturday of Each Month
+                    Thanksgiving Day
                   </div>
                   <div
                     className="text-muted-foreground text-sm"
                     data-testid="text-event-date"
                   >
-                    Next Event: January 6, 2025
+                    Next Event: November 27, 2025
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function EventSection() {
                     className="font-sans font-medium text-foreground"
                     data-testid="text-event-time"
                   >
-                    9:00 AM - 11:00 AM
+                    8:00 AM - 12:00 PM
                   </div>
                   <div className="text-muted-foreground text-sm">
                     Service followed by fellowship
@@ -72,7 +72,7 @@ export default function EventSection() {
                     className="font-sans font-medium text-foreground"
                     data-testid="text-event-location"
                   >
-                    Dallas & Minneapolis
+                    Dallas
                   </div>
                   <div className="text-muted-foreground text-sm">
                     Specific locations shared upon registration
