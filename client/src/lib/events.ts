@@ -18,7 +18,7 @@ export const upcomingEvents: Event[] = [
     date: "November 27, 2025",
     displayDate: "Thanksgiving Day",
     time: "8:00 AM - 12:00 PM",
-    timeDetails: "Service followed by fellowship",
+    timeDetails: "This is the big event where we prepare, package, and deliver meals to the homeless and less fortunate.",
     location: "Dallas",
     locationDetails: "Specific locations shared upon registration",
     month: "November",
