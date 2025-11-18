@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock } from "lucide-react";
+import FormModal from "@/components/FormModal";
 
 export default function EventSection() {
   return (
@@ -82,13 +83,25 @@ export default function EventSection() {
             </div>
 
             <div className="pt-6 border-t">
-              <Button
-                size="lg"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-heading font-semibold"
-                data-testid="button-rsvp"
+              <FormModal
+                triggerText="RSVP for Next Event"
+                title="RSVP for Upcoming Events"
+                description="Select your preferred event and location"
+                triggerVariant="default"
+                triggerSize="lg"
+                triggerClassName="w-full"
+                testId="button-rsvp"
               >
-                RSVP for Next Event
-              </Button>
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
+                  width="100%" 
+                  height="1200"
+                  className="border-0 rounded-lg"
+                  data-testid="iframe-event-rsvp-home"
+                >
+                  Loading…
+                </iframe>
+              </FormModal>
               <p className="text-center text-muted-foreground text-sm mt-4">
                 Limited spots available • Register early
               </p>
