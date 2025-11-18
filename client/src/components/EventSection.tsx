@@ -1,9 +1,25 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import FormModal from "@/components/FormModal";
+import { getNextEvent } from "@/lib/events";
 
 export default function EventSection() {
+  const nextEvent = getNextEvent();
+
+  if (!nextEvent) {
+    return (
+      <section className="py-24 bg-card" data-testid="section-event">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-muted-foreground font-sans text-lg">
+              New events coming soon. Check back for updates!
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 bg-card" data-testid="section-event">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -26,7 +42,7 @@ export default function EventSection() {
         <Card className="max-w-3xl mx-auto p-8 md:p-12">
           <div className="space-y-6">
             <h3 className="font-heading font-semibold text-2xl text-foreground">
-              Operation Turkey Dallas 2025
+              {nextEvent.title}
             </h3>
 
             <div className="space-y-4">
@@ -36,13 +52,13 @@ export default function EventSection() {
                 </div>
                 <div>
                   <div className="font-sans font-medium text-foreground">
-                    Thanksgiving Day
+                    {nextEvent.displayDate}
                   </div>
                   <div
                     className="text-muted-foreground text-sm"
                     data-testid="text-event-date"
                   >
-                    Next Event: November 27, 2025
+                    Next Event: {nextEvent.date}
                   </div>
                 </div>
               </div>
@@ -56,10 +72,10 @@ export default function EventSection() {
                     className="font-sans font-medium text-foreground"
                     data-testid="text-event-time"
                   >
-                    8:00 AM - 12:00 PM
+                    {nextEvent.time}
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    Service followed by fellowship
+                    {nextEvent.timeDetails}
                   </div>
                 </div>
               </div>
@@ -73,10 +89,10 @@ export default function EventSection() {
                     className="font-sans font-medium text-foreground"
                     data-testid="text-event-location"
                   >
-                    Dallas
+                    {nextEvent.location}
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    Specific locations shared upon registration
+                    {nextEvent.locationDetails}
                   </div>
                 </div>
               </div>

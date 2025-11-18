@@ -1,7 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Heart, Home } from "lucide-react";
+import { Users, Heart, Home, Calendar, MapPin, Clock } from "lucide-react";
 import FormModal from "@/components/FormModal";
+import { getCurrentMonthEvent, upcomingEvents } from "@/lib/events";
 
 const eventCategories = [
   {
@@ -31,9 +32,185 @@ const eventCategories = [
 ];
 
 export default function EventsContent() {
+  const currentMonthEvent = getCurrentMonthEvent();
+
   return (
     <section className="py-24 bg-white" data-testid="section-events-content">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Current Month Event Card */}
+        {currentMonthEvent && (
+          <div className="mb-24">
+            <div className="text-center mb-12">
+              <span className="inline-block text-primary font-sans font-medium text-sm uppercase tracking-[0.15em] mb-4">
+                This Month
+              </span>
+              <h2
+                className="font-heading font-semibold text-foreground mb-6"
+                style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
+              >
+                {currentMonthEvent.month}'s Mission Event
+              </h2>
+            </div>
+
+            <Card className="max-w-3xl mx-auto p-8 md:p-12">
+              <div className="space-y-6">
+                <h3 className="font-heading font-semibold text-2xl text-foreground">
+                  {currentMonthEvent.title}
+                </h3>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Calendar className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <div className="font-sans font-medium text-foreground">
+                        {currentMonthEvent.displayDate}
+                      </div>
+                      <div className="text-muted-foreground text-sm">
+                        {currentMonthEvent.date}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <div className="font-sans font-medium text-foreground">
+                        {currentMonthEvent.time}
+                      </div>
+                      <div className="text-muted-foreground text-sm">
+                        {currentMonthEvent.timeDetails}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="text-primary" size={20} />
+                    </div>
+                    <div>
+                      <div className="font-sans font-medium text-foreground">
+                        {currentMonthEvent.location}
+                      </div>
+                      <div className="text-muted-foreground text-sm">
+                        {currentMonthEvent.locationDetails}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t">
+                  <FormModal
+                    triggerText="RSVP for This Event"
+                    title="RSVP for Upcoming Events"
+                    description="Select your preferred event and location"
+                    triggerVariant="default"
+                    triggerSize="lg"
+                    triggerClassName="w-full"
+                    testId="button-rsvp-month"
+                  >
+                    <iframe 
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
+                      width="100%" 
+                      height="1200"
+                      className="border-0 rounded-lg"
+                      data-testid="iframe-event-rsvp"
+                    >
+                      Loading…
+                    </iframe>
+                  </FormModal>
+                  <p className="text-center text-muted-foreground text-sm mt-4">
+                    Limited spots available • Register early
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {/* ═══════════════════════════════════════════════════════════
+            📌 ADDITIONAL EVENT CARDS - TO SHOW MORE EVENTS:
+            ═══════════════════════════════════════════════════════════
+            1. First, add your events in shared/events.ts
+            2. Then uncomment the section below to display them
+            ═══════════════════════════════════════════════════════════ */}
+        
+        {/* UNCOMMENT THIS SECTION TO SHOW ALL UPCOMING EVENTS AS CARDS:
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2
+              className="font-heading font-semibold text-foreground mb-6"
+              style={{ fontSize: "clamp(2rem, 5vw, 3rem)" }}
+            >
+              All Upcoming Events
+            </h2>
+            <p className="text-muted-foreground font-sans text-lg max-w-2xl mx-auto leading-relaxed">
+              View all our scheduled events and RSVP today
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {upcomingEvents.map((event) => (
+              <Card key={event.id} className="p-6 md:p-8">
+                <div className="space-y-4">
+                  <h3 className="font-heading font-semibold text-xl text-foreground">
+                    {event.title}
+                  </h3>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="text-primary" size={18} />
+                      <div className="text-sm">
+                        <span className="font-sans font-medium text-foreground">
+                          {event.displayDate}
+                        </span>
+                        <span className="text-muted-foreground"> • {event.date}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <Clock className="text-primary" size={18} />
+                      <div className="text-sm font-sans text-foreground">
+                        {event.time}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <MapPin className="text-primary" size={18} />
+                      <div className="text-sm font-sans text-foreground">
+                        {event.location}
+                      </div>
+                    </div>
+                  </div>
+
+                  <FormModal
+                    triggerText="RSVP"
+                    title="RSVP for Upcoming Events"
+                    description="Select your preferred event and location"
+                    triggerSize="default"
+                    triggerClassName="w-full mt-4"
+                    testId={`button-rsvp-${event.id}`}
+                  >
+                    <iframe 
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
+                      width="100%" 
+                      height="1200"
+                      className="border-0 rounded-lg"
+                    >
+                      Loading…
+                    </iframe>
+                  </FormModal>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+        */}
+
+        {/* Event Categories Section */}
         <div className="text-center mb-16">
           <h2
             className="font-heading font-semibold text-foreground mb-6"
