@@ -47,18 +47,18 @@ export const upcomingEvents: Event[] = [
   // ═══════════════════════════════════════════════════════════
   // 📌 ADD MORE EVENTS BELOW - Simply uncomment and customize:
   // ═══════════════════════════════════════════════════════════
-  // {
-  //   id: "december-service-2025",
-  //   title: "Christmas Community Outreach",
-  //   date: "December 14, 2025",
-  //   displayDate: "Second Saturday",
-  //   time: "9:00 AM - 1:00 PM",
-  //   timeDetails: "Gift distribution and meal service",
-  //   location: "Dallas",
-  //   locationDetails: "Multiple locations available",
-  //   month: "December",
-  //   year: 2025,
-  // },
+  {
+    id: "january-service-2026",
+    title: "MLK Weekend Outreach",
+    date: "January 17, 2026",
+    displayDate: "Third Saturday",
+    time: "9:00 AM - 1:00 PM",
+    timeDetails: " Morning Activities (Registration opens at 9 AM) Start the day with our large-scale community cleanup as neighbors, nonprofits, churches, small businesses, and volunteers come together to beautify South Dallas. Breakfast is available for registered volunteers. We will accomplish: Community Cleanup Neighborhood beautification projects engaging 2,500+ volunteers Mural Installations Local artists creating public art that celebrates Black history & culture",
+    location: "Dallas",
+    locationDetails: "Multiple locations available",
+    month: "January",
+    year: 2026,
+  },
   // {
   //   id: "january-kickoff-2026",
   //   title: "New Year Kickoff Service Day",
