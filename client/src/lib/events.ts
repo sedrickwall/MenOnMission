@@ -1,14 +1,34 @@
+// ═══════════════════════════════════════════════════════════
+// 📅 EVENT MANAGEMENT SYSTEM
+// ═══════════════════════════════════════════════════════════
+// This file is your single source of truth for all events.
+// Simply add/edit events here, and they'll automatically appear
+// across all pages that use the UpcomingEventCard component.
+//
+// HOW TO ADD A NEW EVENT:
+// 1. Copy an existing event object below
+// 2. Update all the fields with your new event details
+// 3. Make sure the date format is "Month Day, Year" (e.g., "January 15, 2026")
+// 4. Save the file - that's it! Your event will show up automatically
+//
+// TIPS:
+// - Events are automatically sorted by date
+// - The "Next Event" on homepage shows the closest upcoming event
+// - The Events page can show current month or all upcoming events
+// - Delete or comment out past events to keep the list clean
+// ═══════════════════════════════════════════════════════════
+
 export interface Event {
-  id: string;
-  title: string;
-  date: string;
-  displayDate: string;
-  time: string;
-  timeDetails: string;
-  location: string;
-  locationDetails: string;
-  month: string;
-  year: number;
+  id: string; // Unique identifier (use lowercase-with-dashes)
+  title: string; // Event name shown to users
+  date: string; // Full date: "Month Day, Year"
+  displayDate: string; // Short description: "Thanksgiving Day", "Second Saturday"
+  time: string; // Time range: "8:00 AM - 12:00 PM"
+  timeDetails: string; // Additional time info or event description
+  location: string; // City or venue name
+  locationDetails: string; // Additional location details
+  month: string; // Month name: "January", "February", etc.
+  year: number; // Four-digit year: 2026
 }
 
 export const upcomingEvents: Event[] = [
@@ -25,7 +45,7 @@ export const upcomingEvents: Event[] = [
     year: 2025,
   },
   // ═══════════════════════════════════════════════════════════
-  // 📌 ADD MORE EVENTS BELOW - Simply uncomment and fill in:
+  // 📌 ADD MORE EVENTS BELOW - Simply uncomment and customize:
   // ═══════════════════════════════════════════════════════════
   // {
   //   id: "december-service-2025",
@@ -53,16 +73,38 @@ export const upcomingEvents: Event[] = [
   // },
 ];
 
+/**
+ * Get the event for the current month
+ * Used on the Events page to highlight this month's event
+ */
 export function getCurrentMonthEvent(): Event | undefined {
   const now = new Date();
   const currentMonth = now.toLocaleString('default', { month: 'long' });
   return upcomingEvents.find(event => event.month === currentMonth);
 }
 
+/**
+ * Get the next upcoming event (chronologically closest)
+ * Used on the Home page to show the next event
+ */
 export function getNextEvent(): Event | undefined {
   const now = new Date();
   return upcomingEvents.find(event => {
     const eventDate = new Date(event.date);
     return eventDate >= now;
+  });
+}
+
+/**
+ * Get all upcoming events (future events only)
+ * Useful if you want to display multiple events
+ */
+export function getAllUpcomingEvents(): Event[] {
+  const now = new Date();
+  return upcomingEvents.filter(event => {
+    const eventDate = new Date(event.date);
+    return eventDate >= now;
+  }).sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
 }

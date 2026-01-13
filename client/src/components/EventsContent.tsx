@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Heart, Home, Calendar, MapPin, Clock } from "lucide-react";
+import { Users, Heart, Home } from "lucide-react";
 import FormModal from "@/components/FormModal";
-import { getCurrentMonthEvent, upcomingEvents } from "@/lib/events";
+import { getCurrentMonthEvent } from "@/lib/events";
+import UpcomingEventCard from "@/components/UpcomingEventCard";
 
 const eventCategories = [
   {
@@ -52,82 +53,11 @@ export default function EventsContent() {
               </h2>
             </div>
 
-            <Card className="max-w-3xl mx-auto p-8 md:p-12">
-              <div className="space-y-6">
-                <h3 className="font-heading font-semibold text-2xl text-foreground">
-                  {currentMonthEvent.title}
-                </h3>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="text-primary" size={20} />
-                    </div>
-                    <div>
-                      <div className="font-sans font-medium text-foreground">
-                        {currentMonthEvent.displayDate}
-                      </div>
-                      <div className="text-muted-foreground text-sm">
-                        {currentMonthEvent.date}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-primary" size={20} />
-                    </div>
-                    <div>
-                      <div className="font-sans font-medium text-foreground">
-                        {currentMonthEvent.time}
-                      </div>
-                      <div className="text-muted-foreground text-sm">
-                        {currentMonthEvent.timeDetails}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-primary" size={20} />
-                    </div>
-                    <div>
-                      <div className="font-sans font-medium text-foreground">
-                        {currentMonthEvent.location}
-                      </div>
-                      <div className="text-muted-foreground text-sm">
-                        {currentMonthEvent.locationDetails}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t">
-                  <FormModal
-                    triggerText="RSVP for This Event"
-                    title="RSVP for Upcoming Events"
-                    description="Select your preferred event and location"
-                    triggerVariant="default"
-                    triggerSize="lg"
-                    triggerClassName="w-full"
-                    testId="button-rsvp-month"
-                  >
-                    <iframe 
-                      src="https://docs.google.com/forms/d/e/1FAIpQLSdruaGbV_BRQbnUYdw4p0KRUmW8jNmsnYP86f2-ln07rTqIBw/viewform?embedded=true" 
-                      width="100%" 
-                      height="1200"
-                      className="border-0 rounded-lg"
-                      data-testid="iframe-event-rsvp"
-                    >
-                      Loading…
-                    </iframe>
-                  </FormModal>
-                  <p className="text-center text-muted-foreground text-sm mt-4">
-                    Limited spots available • Register early
-                  </p>
-                </div>
-              </div>
-            </Card>
+            <UpcomingEventCard 
+              event={currentMonthEvent} 
+              showRegisterButton={true}
+              className="max-w-3xl mx-auto"
+            />
           </div>
         )}
 
